@@ -21,7 +21,7 @@
             <h4>Ready Players?</h4>
             <br>
             <p class="lead guide"><span class="st-guide">Instructions</span>: The game is played by two players clicking any of the cards by turn. The player with the highest score will win the
-            game. General cards are worth one point. Special Cards (King, Ace, Queen) are worth 5 points.</p>
+            game. General cards are worth 1 point. Special Cards (King, Ace, Queen) are worth 3 points.</p>
         </div>
     </div>
 
@@ -42,7 +42,7 @@
                 </div>
             </div>
             <div class="col score-board">
-                <div class="col-4 mx-auto score">
+                <div id="player-two-score" class="col-4 mx-auto score">
                     0
                 </div>
             </div>
@@ -50,55 +50,53 @@
 
         <div class="container cards">
             <!-- card row one  -->
-            <div class="row">
+            <div class="row card-row">
                 <div class="col one">
-                    <img onclick="selected(id)" id="card-one" name="test" class="st-card" src="PNG/yellow_back.png" alt="card back">
+                    <img onclick="selected(id)" id="card-one" Name="test" class="st-card" src="PNG/yellow_back.png" alt="card back">
                 </div>
                 <div class="col two">
-                    <img onclick="selected(id)" id="card-two" name="test" class="st-card" src="PNG/yellow_back.png" alt="card back">
+                    <img onclick="selected(id)" id="card-two" Name="test" class="st-card" src="PNG/yellow_back.png" alt="card back">
                 </div>
                 <div class="col three">
-                    <img onclick="selected(id)" id="card-three" name="test" class="st-card" src="PNG/yellow_back.png" alt="card back">
+                    <img onclick="selected(id)" id="card-three" Name="test" class="st-card" src="PNG/yellow_back.png" alt="card back">
                 </div>
                 <div class="col four">
-                    <img onclick="selected(id)" id="card-four" name="test" class="st-card" src="PNG/yellow_back.png" alt="card back">
+                    <img onclick="selected(id)" id="card-four" Name="test" class="st-card" src="PNG/yellow_back.png" alt="card back">
                 </div>
             </div>
             <!-- card row two  -->
-            <div class="row">
+            <div class="row card-row">
                 <div class="col">
-                    card one
+                    <img onclick="selected(id)" id="card-five" class="st-card" src="PNG/yellow_back.png" alt="card back">
                 </div>
                 <div class="col">
-                    card two
+                    <img onclick="selected(id)" id="card-six" class="st-card" src="PNG/yellow_back.png" alt="card back">
                 </div>
                 <div class="col">
-                    card three
+                    <img onclick="selected(id)" id="card-seven" class="st-card" src="PNG/yellow_back.png" alt="card back">
                 </div>
                 <div class="col">
-                    card four
+                    <img onclick="selected(id)" id="card-eight" class="st-card" src="PNG/yellow_back.png" alt="card back">
                 </div>
             </div>
             <!-- card row three  -->
-            <div class="row">
+            <div class="row card-row">
                 <div class="col">
-                    card one
+                    <img onclick="selected(id)" id="card-nine" class="st-card" src="PNG/yellow_back.png" alt="card back">
                 </div>
                 <div class="col">
-                    card two
+                    <img onclick="selected(id)" id="card-ten" class="st-card" src="PNG/yellow_back.png" alt="card back">
                 </div>
                 <div class="col">
-                    card three
+                    <img onclick="selected(id)" id="card-eleven" class="st-card" src="PNG/yellow_back.png" alt="card back">
                 </div>
                 <div class="col">
-                    card four
+                    <img onclick="selected(id)" id="card-twelve" class="st-card" src="PNG/yellow_back.png" alt="card back">
                 </div>
             </div>
         </div>
 
-        <button onclick="" class="btn st-btn col-6">Start</button>
-
-        <button onclick="generateNumber()" class="btn st-btn col-6">Generate Random Number</button>
+        <button onclick="restartGame()" class="btn st-btn col-6">Start</button>
 
     </div>
 
