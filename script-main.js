@@ -5,6 +5,8 @@ var selectedSlot;  // card slot that player clicked on
 
 var usedCard = []; // empty array to add used card 
 
+var playerTurn = 0 // toggle switch that represents the player's turn
+
 // Generic Cards
 var cardArray = ["C", "D", "H", "S"];
 // Special Cards
@@ -34,17 +36,31 @@ function generateNumber() {
     // if generic card is choosen, concatenate letter with random number  
     if ((cardArray).indexOf(cardLetter) !==-1) {
         var genericCard = randomNumber + cardLetter;
-        var cardToShow = "PNG/" + genericCard + ".png"
-
+        var cardToShow = "PNG/" + genericCard + ".png";
+        updateScore();
     } // OR if special card is choosen, leave as is
     else {
         var specialCard = cardLetter;
-        cardToShow = "PNG/" + specialCard + ".png"
-
+        cardToShow = "PNG/" + specialCard + ".png";  
+        updateScore();
     } 
-    
-    console.log('The card slot with id: ' + "'" + selectedSlot + "'" + ' was selected! The new card file path to show is: ' + cardToShow);
-    
+
+        // calulate score
+        //function that toggles between two players, each time mouse is clicked and updates player score
+        function updateScore(){
+            if (playerTurn === 0){
+                playerTurn = 1
+                playerOne++;
+                document.getElementById('player-one-score').innerText = playerOne;
+            } else {
+                playerTurn = 0
+                playerTwo++;
+                document.getElementById('player-two-score').innerText = playerTwo;
+            }
+        }
+
+     console.log('The card slot with id: ' + "'" + selectedSlot + "'" + ' was selected! The new card file path to show is: ' + cardToShow);
+
     // change the current file path of the card, to the newly generated one
     let changeImgSrc = document.getElementById(selectedSlot)
     changeImgSrc.src = cardToShow;
@@ -52,31 +68,37 @@ function generateNumber() {
     // remove file path from cardToShow and store the result
     let pathRemoved = cardToShow.replace("PNG/", '').replace(".png", '');
 
-    // take the result and append to array, each time a card is shown
+    // take the result and append to an array of used cards, each time a card is shown
     usedCard.push(pathRemoved);
     console.log(usedCard);
 
-    //for cards inside the usedCard array, when you run the function dont include this as a file path option 
- 
+    //filter 
+    allCards = allCards.filter(card => usedCard.indexOf(card) === -1);
+    console.log(allCards);
 
+    //only allow 52 clicks per game
+    
 }
 
 
-//since ive used this before, when you run the function dont include this as a file path option
-
-
-
-
-    //if yes, run the function again. If no, use the file path.
-    //remove card from original allCards array, so that it can no longer be shown
-
-
-// console.log(changeImgSrc);
-
-if (changeImgSrc = "PNG/" + pathRemoved + ".png") {
-    // alert(changeImgSrc);
-    cardToShow != genericCard;
-    cardToShow != specialCard;
-} else {
-    alert('something else')
+//function 3: reset the game 
+function restartGame() {
+    alert('Ready to restart the game?');
+    //reset player scores 
+    document.getElementById('player-one-score').innerText = 0;
+    document.getElementById('player-two-score').innerText = 0;
+    //reset cards 
+    var resetCards = document.querySelectorAll("img");
+    for (var i = 0; i < resetCards.length; i++) {
+        resetCards[i].src = "PNG/yellow_back.png";
+    }
 }
+
+
+// if (changeImgSrc = "PNG/" + pathRemoved + ".png") {
+//     // alert(changeImgSrc);
+//     cardToShow != genericCard;
+//     cardToShow != specialCard;
+// } else {
+//     alert('something else')
+// }
