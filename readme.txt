@@ -46,26 +46,16 @@ Planning - 10/6/21
 
     • logic -
 
-        1 all cards start face down 
-        2 player clicks face down card 
-        3 face down card shows numbered card 
+        1 12 card slots, with all cards starting face down 
+        2 when player clicks a card slot, a playable card is shown
             (
                 a. get script to change image
                 b. get script to change to random image
             )
+        4. playable card is removed from possible cards to show 
+        5. cards are tallied per player 
+        6. player with highest card score wins
 
-
-
-
-
-    • predictions - 
-
-        - give each card image a number 
-        - when player selects a card, random number is generated 
-        - random generated number = corresponding card image number 
-            - remove card from deck
-        - add card number to current score 
-    
 
 ------------------
 Steps 
@@ -82,4 +72,8 @@ Game:
 
 4. add face down cards 
 5. test row/col flex
-6. build game using planned logic (see above)
+6. build game using planned javscript logic
+7. test game 
+8. setup start button to reset game
+8. clean up css styling
+
