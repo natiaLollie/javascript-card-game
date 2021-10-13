@@ -93,12 +93,3 @@ function restartGame() {
         resetCards[i].src = "PNG/yellow_back.png";
     }
 }
-
-
-// if (changeImgSrc = "PNG/" + pathRemoved + ".png") {
-//     // alert(changeImgSrc);
-//     cardToShow != genericCard;
-//     cardToShow != specialCard;
-// } else {
-//     alert('something else')
-// }
